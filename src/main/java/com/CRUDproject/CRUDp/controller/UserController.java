@@ -20,6 +20,8 @@ public ResponseEntity<List<Users>>getAllUsers(){
     try {
         users=userService.getAllUsers();
     }
+    /*change*/
+
     catch (Exception ex){
         ex.getMessage();
     }

@@ -25,6 +25,8 @@ public ResponseEntity<List<Users>>getAllUsers(){
     }
     return new ResponseEntity<List<Users>>(users, HttpStatus.OK);
 }
+/*Here i just change bfbfdzbzfd*/
+
     @GetMapping("/getById/{id}")
     public ResponseEntity <Users> getUserById(@PathVariable("id")int userId){
         Users users = null;

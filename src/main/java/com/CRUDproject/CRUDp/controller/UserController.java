@@ -20,13 +20,15 @@ public ResponseEntity<List<Users>>getAllUsers(){
     try {
         users=userService.getAllUsers();
     }
+    /*change*/
+
     catch (Exception ex){
         ex.getMessage();
     }
     return new ResponseEntity<List<Users>>(users, HttpStatus.OK);
 }
-/*Here i just change .I dont know sa as.*/
 
+/*Here i just change .I dont know sa as.*/
     @GetMapping("/getById/{id}")
     public ResponseEntity <Users> getUserById(@PathVariable("id")int userId){
         Users users = null;

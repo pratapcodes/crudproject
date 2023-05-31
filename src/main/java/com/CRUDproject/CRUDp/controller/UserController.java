@@ -62,5 +62,18 @@ public ResponseEntity<List<Users>>getAllUsers(){
         }
         return new ResponseEntity<Users>(users, HttpStatus.OK);
     }
+    @DeleteMapping ("/delete/{id}")
+    public ResponseEntity<Users> addOrUpdateUsers(@PathVariable ("id") int userId){
+        Users users = null;
+        try{
+            users = userService.deleteUser(userId);
+        }
+        catch (Exception ex){
+            ex.getMessage();
+        }
+        return new ResponseEntity<Users>(users, HttpStatus.OK);
+    }
 
+
+    
 }

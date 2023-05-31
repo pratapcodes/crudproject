@@ -28,7 +28,7 @@ public ResponseEntity<List<Users>>getAllUsers(){
     return new ResponseEntity<List<Users>>(users, HttpStatus.OK);
 }
 
-
+/*Here i just change .I dont know sa as.*/
     @GetMapping("/getById/{id}")
     public ResponseEntity <Users> getUserById(@PathVariable("id")int userId){
         Users users = null;
@@ -50,6 +50,9 @@ public ResponseEntity<List<Users>>getAllUsers(){
         }
         return new ResponseEntity<Users>(users, HttpStatus.OK);
     }
+
+    /* I am merging main to saas, will it work?   */
+
     @DeleteMapping ("/delete/{id}")
     public ResponseEntity<Users> addOrUpdateUser(@PathVariable ("id") int userId){
         Users users = null;
@@ -61,5 +64,18 @@ public ResponseEntity<List<Users>>getAllUsers(){
         }
         return new ResponseEntity<Users>(users, HttpStatus.OK);
     }
+    @DeleteMapping ("/delete/{id}")
+    public ResponseEntity<Users> addOrUpdateUsers(@PathVariable ("id") int userId){
+        Users users = null;
+        try{
+            users = userService.deleteUser(userId);
+        }
+        catch (Exception ex){
+            ex.getMessage();
+        }
+        return new ResponseEntity<Users>(users, HttpStatus.OK);
+    }
 
+
+    
 }
